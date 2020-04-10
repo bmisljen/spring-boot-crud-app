@@ -1,5 +1,7 @@
 package com.example.spring_boot_notes;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,8 @@ public class AppController {
 
     @Autowired
     private NoteService service;
+
+    private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 
     @RequestMapping("/")
     public String viewHomePage(Model model) {
@@ -37,6 +41,8 @@ public class AppController {
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public String saveNote(@ModelAttribute("note") Note note) {
         // Save a note, creates a POST request to the database
+        LocalDateTime now = LocalDateTime.now();
+        note.setDate(dtf.format(now));
         service.save(note);
 
         return "redirect:/";
@@ -58,6 +64,4 @@ public class AppController {
         service.delete(id);
         return "redirect:/";
     }
-
-
 }

@@ -9,13 +9,14 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>spring-boot-notes-app</artifactId>
+	<artifactId>spring_boot_notes</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring-boot-notes-app</name>
-	<description>Demo CRUD notes app project for Spring Boot</description>
+	<description>Demo CRUD notes app for Spring Boot</description>
 
 	<properties>
 		<java.version>1.8</java.version>
+		<start-class>com.example.spring_boot_notes.AppMain</start-class>
 	</properties>
 
 	<repositories>
@@ -24,12 +25,6 @@
 			<url>https://repo.spring.io/libs-release</url>
 		</repository>
 	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>spring-releases</id>
-			<url>https://repo.spring.io/libs-release</url>
-		</pluginRepository>
-	</pluginRepositories>
 
 	<dependencies>
 		<dependency>

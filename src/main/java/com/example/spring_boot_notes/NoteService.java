@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.spring_boot_notes;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,20 +7,20 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
-public class ProductService {
+public class NoteService {
 
     @Autowired
-    private ProductRepository repo;
+    private NoteRepository repo;
 
-    public List<Product> listAll() {
+    public List<Note> listAll() {
         return repo.findAll();
     }
 
-    public void save(Product product) {
-        repo.save(product);
+    public void save(Note note) {
+        repo.save(note);
     }
 
-    public Product get(long id) {
+    public Note get(long id) {
         return repo.findById(id).get();
     }
 

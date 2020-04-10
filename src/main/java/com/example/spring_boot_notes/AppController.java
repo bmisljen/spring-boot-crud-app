@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.spring_boot_notes;
 
 import java.util.List;
 
@@ -15,42 +15,46 @@ import org.springframework.web.servlet.ModelAndView;
 public class AppController {
 
     @Autowired
-    private ProductService service;
+    private NoteService service;
 
     @RequestMapping("/")
     public String viewHomePage(Model model) {
-        List<Product> listProducts = service.listAll();
-        model.addAttribute("listProducts", listProducts);
+        List<Note> listNotes = service.listAll();
+        model.addAttribute("listNotes", listNotes);
 
         return "index";
     }
 
     @RequestMapping("/new")
-    public String showNewProductPage(Model model) {
-        Product product = new Product();
-        model.addAttribute("product", product);
+    public String showNewNotePage(Model model) {
+        // create a new note
+        Note note = new Note();
+        model.addAttribute("note", note);
 
-        return "new_product";
+        return "new_note";
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public String saveProduct(@ModelAttribute("product") Product product) {
-        service.save(product);
+    public String saveNote(@ModelAttribute("note") Note note) {
+        // Save a note, creates a POST request to the database
+        service.save(note);
 
         return "redirect:/";
     }
 
     @RequestMapping("/edit/{id}")
-    public ModelAndView showEditProductPage(@PathVariable(name = "id") int id) {
-        ModelAndView mav = new ModelAndView("edit_product");
-        Product product = service.get(id);
-        mav.addObject("product", product);
+    public ModelAndView showEditNotePage(@PathVariable(name = "id") int id) {
+        // Edit a note by showing the edit note page, get the note from the database by id
+        ModelAndView mav = new ModelAndView("edit_note");
+        Note note = service.get(id);
+        mav.addObject("note", note);
 
         return mav;
     }
 
     @RequestMapping("/delete/{id}")
-    public String deleteProduct(@PathVariable(name = "id") int id) {
+    public String deleteNote(@PathVariable(name = "id") int id) {
+        // Delete a note from the database by id
         service.delete(id);
         return "redirect:/";
     }

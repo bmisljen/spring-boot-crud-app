@@ -16,15 +16,15 @@ In order to run the project you need to setup a MYSQL database with a "note" tab
 
 2. USE notes;
 
-3. CREATE TABLE `note` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) NOT NULL,
-  `text` varchar(45) NOT NULL,
-  `date` varchar(20) NOT NULL,
-   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+3. CREATE TABLE `note` ( <br/>
+  `id` int(11) NOT NULL AUTO_INCREMENT, <br/>
+  `name` varchar(45) NOT NULL, <br/>
+  `text` varchar(45) NOT NULL, <br/>
+  `date` varchar(20) NOT NULL, <br/>
+   PRIMARY KEY (`id`) <br/>
+) ENGINE=InnoDB DEFAULT CHARSET=utf8; <br/>
 
-After the database is created you can clone the project into a Local directory. After installing Maven and Java JDK (v8 or v11) you can go to the root directory of your project and enter: 
+After the database is created you can clone this repository into a local directory. After installing Maven and Java JDK (v8 or v11) you can go to the root directory of your project and enter: 
 
 mvn spring-boot:run 
 

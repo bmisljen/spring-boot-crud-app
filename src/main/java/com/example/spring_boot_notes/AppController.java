@@ -18,11 +18,12 @@ public class AppController {
 
     @Autowired
     private NoteService service;
-
+    // Set the date format
     private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 
     @RequestMapping("/")
     public String viewHomePage(Model model) {
+        // List all of our notes on the homepage
         List<Note> listNotes = service.listAll();
         model.addAttribute("listNotes", listNotes);
 
@@ -40,7 +41,7 @@ public class AppController {
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public String saveNote(@ModelAttribute("note") Note note) {
-        // Save a note, creates a POST request to the database
+        // Save a note, whether new or edited. A POST request is sent to the database
         LocalDateTime now = LocalDateTime.now();
         note.setDate(dtf.format(now));
         service.save(note);

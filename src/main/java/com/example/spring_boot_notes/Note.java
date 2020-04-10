@@ -16,6 +16,8 @@ public class Note {
     }
 
     protected Note(Long id, String name, String text, String date) {
+        // A note has an auto generated id, name, user specified text and an auto
+        // generated timestamp
         super();
         this.id = id;
         this.name = name;

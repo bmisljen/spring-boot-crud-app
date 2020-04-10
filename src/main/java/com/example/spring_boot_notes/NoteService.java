@@ -11,7 +11,6 @@ public class NoteService {
 
     @Autowired
     private NoteRepository repo;
-
     public List<Note> listAll() {
         return repo.findAll();
     }

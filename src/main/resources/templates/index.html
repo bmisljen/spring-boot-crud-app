@@ -13,7 +13,7 @@
     <table border="1" cellpadding="10">
         <thead>
         <tr>
-            <th>Note ID</th>
+            <!--<th>Note ID</th>-->
             <th>Name</th>
             <th>Text</th>
             <th>Date</th>
@@ -21,7 +21,7 @@
         </thead>
         <tbody>
         <tr th:each="note : ${listNotes}">
-            <td th:text="${note.id}">Note ID</td>
+            <!--<td th:text="${note.id}">Note ID</td>-->
             <td th:text="${note.name}">Name</td>
             <td th:text="${note.text}">Text</td>
             <td th:text="${note.date}">Date Created</td>

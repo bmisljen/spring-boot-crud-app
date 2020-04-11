@@ -12,7 +12,7 @@
 </head>
 <body>
 <div align="center">
-    <h1 class="display-4">Create New note</h1>
+    <h1 class="display-4">Create New Note</h1>
     <br />
     <form action="#" th:action="@{/save}" th:object="${note}"
           method="post">
@@ -22,27 +22,15 @@
             <textarea class="form-control" id="noteName" rows="1" th:field="*{name}"></textarea>
             <small id="name help" class="form-text text-muted">Enter the note name</small>
         </div>
+
         <div class="form-group w-50">
             <label for="noteText">Enter Note Text</label>
             <textarea class="form-control" id="noteText" rows="3" th:field="*{text}"></textarea>
             <small id="text help" class="form-text text-muted">Enter the note text</small>
         </div>
+
         <button type="submit" class="btn btn-primary">Save</button>
 
-        <!--
-        <table class="table">
-            <tr>
-                <td><p class="h5">Note Name:</p></td>
-                <td><input type="text" th:field="*{name}" /></td>
-            </tr>
-            <tr>
-                <td><p class="h5">Text:</p></td>
-                <td><input type="text" th:field="*{text}" /></td>
-            </tr>
-            <tr>
-                <td colspan="2"><button type="submit">Save</button> </td>
-            </tr>
-        </table> -->
     </form>
 </div>
 

@@ -13,32 +13,28 @@
 </head>
 <body>
 <div align="center">
-    <h1>Edit Note</h1>
+    <h1 class="display-4">Edit Note</h1>
     <br />
     <form action="#" th:action="@{/save}" th:object="${note}"
           method="post">
 
-        <table border="0" cellpadding="10">
-            <tr hidden>
-                <td>Note ID:</td>
-                <td>
-                    <input type="text" th:field="*{id}" readonly="readonly" />
-                </td>
-            </tr>
-            <tr>
-                <td>Note Name:</td>
-                <td>
-                    <input type="text" th:field="*{name}" />
-                </td>
-            </tr>
-            <tr>
-                <td>Text:</td>
-                <td><input type="text" th:field="*{text}" /></td>
-            </tr>
-            <tr>
-                <td colspan="2"><button type="submit">Save</button> </td>
-            </tr>
-        </table>
+            <div hidden class="form-group w-50">
+                <textarea class="form-control" id="noteID" rows="1" th:field="*{id}"></textarea>
+            </div>
+
+            <div class="form-group w-50">
+                <label for="noteName">Note Name</label>
+                <textarea class="form-control" id="noteName" rows="1" th:field="*{name}"></textarea>
+                <small id="name help" class="form-text text-muted">Enter the updated note name</small>
+            </div>
+
+            <div class="form-group w-50">
+                <label for="noteText">Enter Note Text</label>
+                <textarea class="form-control" id="noteText" rows="3" th:field="*{text}"></textarea>
+                <small id="text help" class="form-text text-muted">Enter the updated note text</small>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Update</button>
     </form>
 </div>
 

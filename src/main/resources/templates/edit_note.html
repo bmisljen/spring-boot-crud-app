@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script type="text/javascript" src="/js/helpers.js"></script>
 
     <meta charset="utf-8" />
     <title>Edit Note</title>
@@ -15,8 +16,8 @@
 <div align="center">
     <h1 class="display-4">Edit Note</h1>
     <br />
-    <form action="#" th:action="@{/save}" th:object="${note}"
-          method="post">
+    <form name="noteForm" action="#" th:action="@{/save}" th:object="${note}"
+          method="post" onsubmit="return validateForm()">
 
             <div hidden class="form-group w-50">
                 <textarea class="form-control" id="noteID" rows="1" th:field="*{id}"></textarea>
@@ -38,8 +39,6 @@
             <a class="btn btn-primary" href="../" role="button">Cancel</a>
     </form>
 </div>
-
-<script src="/js/helpers.js"></script>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

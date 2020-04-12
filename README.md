@@ -1,12 +1,12 @@
 # spring-boot-crud-app
 Simple Java SpringBoot Notes CRUD Application
 
-The application allows you to create, edit and delete notes as well as displaying a list of all entered notes. All notes are timestamped with the creation or last editing date. 
+The application allows you to create, edit and delete notes as well as displaying a list of all entered notes. All notes are timestamped with the creation or last editing date. There is also a JavaScript function which verifies that a note name and note text is not left blank and an additional JavaScript function which allows you to sort the list of notes with the most recent notes appearing at the top of the list. 
 
 This application is a modification of the web app found at:
 https://www.codejava.net/frameworks/spring-boot/spring-boot-crud-example-with-spring-mvc-spring-data-jpa-thymeleaf-hibernate-mysql
 
-The app was built using the IntelliJ community edition IDE and uses the following technologies:
+The app was built using Ubuntu Linux version 18.04 using the IntelliJ community edition IDE and uses the following technologies:
 
 Spring Boot, Spring MVC, Spring Data JPA, Hibernate, MySQL, Bootstrap, JavaScript, CSS
 

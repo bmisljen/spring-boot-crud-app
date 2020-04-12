@@ -19,7 +19,7 @@ In order to run the project you need to setup a MYSQL database with a "note" tab
 3. CREATE TABLE `note` ( <br/>
   `id` int(11) NOT NULL AUTO_INCREMENT, <br/>
   `name` varchar(45) NOT NULL, <br/>
-  `text` varchar(45) NOT NULL, <br/>
+  `text` varchar(200) NOT NULL, <br/>
   `date` varchar(20) NOT NULL, <br/>
    PRIMARY KEY (`id`) <br/>
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8; <br/>

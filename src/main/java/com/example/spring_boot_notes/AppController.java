@@ -18,8 +18,8 @@ public class AppController {
 
     @Autowired
     private NoteService service;
-    // Set the date format
-    private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+    // Set the date format for the note time stamps
+    private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
 
     @RequestMapping("/")
     public String viewHomePage(Model model) {
